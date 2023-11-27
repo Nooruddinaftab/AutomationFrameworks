@@ -36,7 +36,7 @@ namespace AutomationFramework
         [TestInitialize()]
         public void TestInit()
         {
-            Initialization.ExecutionBrowser = ConfigurationManager.AppSettings["ExecutionBrowser"].ToString();
+            CoreFrame.ExecutionBrowser = ConfigurationManager.AppSettings["ExecutionBrowser"].ToString();
             Initialization.SeleniumInit();
         }
 
@@ -54,6 +54,7 @@ namespace AutomationFramework
 
 
         [TestMethod]
+        [TestCategory("Login")]
         public void Login()
         {
             AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "AmirTester", "AmirTester");
@@ -90,7 +91,6 @@ namespace AutomationFramework
             Console.WriteLine("Order Number: " + AdactinHotelApp.BookHotelPage.GetOrderNo());
         }
 
-
         [TestMethod]
         [TestCategory(MyDemoAppTestCategory.Login)]
         public void TestCase_E2E_03()
@@ -102,7 +102,6 @@ namespace AutomationFramework
             Thread.Sleep(10000);
             Console.WriteLine("Order Number: " + AdactinHotelApp.BookHotelPage.GetOrderNo());
         }
-
 
         [TestMethod]
         [TestCategory("Login"), TestCategory("BAT"), TestCategory("P1")]
@@ -118,7 +117,6 @@ namespace AutomationFramework
 
             string message = Initialization.driver.FindElement(By.ClassName("welcome_menu")).Text;
             Assert.AreEqual("Welcome to Adactin Group of Hotels", message);
-
         }
 
 
@@ -146,8 +144,6 @@ namespace AutomationFramework
                     string a = reader["id"].ToString();
                 }
             }
-
-
 
             Initialization.CloseSQLDBConnection(sqlconnection);
 

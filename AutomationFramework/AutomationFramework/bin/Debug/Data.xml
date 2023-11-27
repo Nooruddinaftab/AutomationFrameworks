@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Automation>
+	<Execution>			
+		<Login>
+			<url>http://adactinhotelapp.com/</url> 
+			<username>AmirTester</username>
+			<password>AmirTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>				
+		</Login>		
+		<LoginWithValidUserInvalidPass>
+			<url>http://adactinhotelapp.com/</url> 
+			<username>Wajeeha</username>
+			<password>Test123</password>
+			<message>Invalid Login details or Your Password might have expired. Click here to reset your password</message>
+			<locator>auth_error</locator>				
+		</LoginWithValidUserInvalidPass>	
+		<WebAPI>
+		<BaseURL>http://api.weatherapi.com/</BaseURL>
+		<region>region</region>
+		<ExpectedValue>Sindh</ExpectedValue>
+		</WebAPI>		
+	</Execution>
+</Automation>

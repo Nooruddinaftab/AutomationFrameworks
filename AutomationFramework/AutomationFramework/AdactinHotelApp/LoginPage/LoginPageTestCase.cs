@@ -34,7 +34,6 @@ namespace AutomationFramework
         [TestInitialize()]
         public void TestInit()
         {
-            string execBrowser = ConfigurationManager.AppSettings["ExecutionBrowser"].ToString();
             Initialization.SeleniumInit();
         }
 
@@ -48,14 +47,16 @@ namespace AutomationFramework
 
 
         [TestMethod]
-        public void TestCase_001Demo()
+        [TestCategory("Test Within LoginPageTestCase Class-Open site")]
+        public void OpenSite()
         {
             OpenUrl("http://adactinhotelapp.com/");
             Write(usernameTxt, "Amir");
         }
 
         [TestMethod]
-        public void TestCase_002Demo()
+        [TestCategory("Test Within LoginPageTestCase Class-Login")]
+        public void Login()
         {
             OpenUrl("http://adactinhotelapp.com/");
             Write(usernameTxt, "Amir");

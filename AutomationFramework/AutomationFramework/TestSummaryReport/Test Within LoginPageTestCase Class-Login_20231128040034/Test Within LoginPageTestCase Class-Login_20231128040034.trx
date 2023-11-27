@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8737d68e-70fa-4866-bdf3-308e5acf807a" name="Noor ud Din@DESKTOP-ES0TMJ0 2023-11-28 04:00:45" runUser="DESKTOP-ES0TMJ0\Noor ud Din" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2023-11-28T04:00:45.7733044+05:00" queuing="2023-11-28T04:00:45.7733044+05:00" start="2023-11-28T04:00:34.8702791+05:00" finish="2023-11-28T04:00:45.7922790+05:00" />
+  <TestSettings name="default" id="80623116-9fdd-4a68-80be-303c6fac7653">
+    <Deployment runDeploymentRoot="Noor_ud_Din_DESKTOP-ES0TMJ0_2023-11-28_04_00_45" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="ac02c551-b525-4a17-b822-9075dc609aa4" testId="ea1397c5-da53-ef42-eb77-25fc9467601a" testName="Login" computerName="DESKTOP-ES0TMJ0" duration="00:00:10.5318632" startTime="2023-11-28T04:00:35.1202994+05:00" endTime="2023-11-28T04:00:45.6882791+05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac02c551-b525-4a17-b822-9075dc609aa4" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Login" storage="f:\automationframeworks\automationframework\automationframework\bin\debug\automationframework.dll" id="ea1397c5-da53-ef42-eb77-25fc9467601a">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Test Within LoginPageTestCase Class-Login" />
+      </TestCategory>
+      <Execution id="ac02c551-b525-4a17-b822-9075dc609aa4" />
+      <TestMethod codeBase="F:\AutomationFrameworks\AutomationFramework\AutomationFramework\bin\Debug\AutomationFramework.dll" adapterTypeName="executor://mstestadapter/v2" className="AutomationFramework.LoginPage" name="Login" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ea1397c5-da53-ef42-eb77-25fc9467601a" executionId="ac02c551-b525-4a17-b822-9075dc609aa4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

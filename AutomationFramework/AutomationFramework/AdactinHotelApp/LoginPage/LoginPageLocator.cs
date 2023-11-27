@@ -10,6 +10,5 @@ namespace AutomationFramework
         By usernameTxt = By.Id("username");
         By passwordTxt = By.Id("password");
         By loginBtn = By.Id("login");
-
     }
 }
