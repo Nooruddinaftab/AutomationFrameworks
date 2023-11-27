@@ -128,6 +128,7 @@
     <Compile Include="Core\Initialization.cs" />
     <Compile Include="Core\Keywords.cs" />
     <Compile Include="Core\CoreFrame.cs" />
+    <Compile Include="WebAPIExecution.cs" />
     <Compile Include="TestExecution.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

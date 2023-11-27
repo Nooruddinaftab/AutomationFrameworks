@@ -24,6 +24,8 @@ namespace AutomationFramework
         #region Javascript Core
         public void Write(string locator, string setValue, int timeToReadyElement = 0)
         {
+            if ( timeToReadyElement == 0)
+                timeToReadyElement = MaxTimeToFindElement;
             try // Locate Element
             {
                 ExecuteJavaScriptCode("$('" + locator + "').val('" + setValue + "').trigger('change')");
@@ -35,6 +37,9 @@ namespace AutomationFramework
         }
         public void Click(string locator, int timeToReadyElement = 0)
         {
+            if (timeToReadyElement == 0)
+                timeToReadyElement = MaxTimeToFindElement;
+
             try // Locate Element
             {
                 ExecuteJavaScriptCode("$('" + locator + "').click()");
@@ -69,6 +74,11 @@ namespace AutomationFramework
         #region Core Methods
         public void Write(By by, string setValue, int timeToReadyElement = 0)
         {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(MaxTimeToFindElement));
+            wait.Until(driver => IsPageReady(driver) == true && IsElementVisible(by) == true && IsClickable(by) == true);
+
+            if (timeToReadyElement == 0)
+                timeToReadyElement = MaxTimeToFindElement;
             try // Locate Element
             {
                 var element = WaitforElement(by, timeToReadyElement);
@@ -81,6 +91,8 @@ namespace AutomationFramework
         }
         public void Click(By by, int timeToReadyElement = 0)
         {
+            if (timeToReadyElement == 0)
+                timeToReadyElement = MaxTimeToFindElement;
             try // Locate Element
             {
                 var element = WaitforElement(by, timeToReadyElement);
@@ -122,6 +134,8 @@ namespace AutomationFramework
         }
         public string GetElementText(By by, int timeToReadyElement = 1)
         {
+            if (timeToReadyElement == 0)
+                timeToReadyElement = MaxTimeToFindElement;
             string actualValue = string.Empty;
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             try
@@ -217,6 +231,8 @@ namespace AutomationFramework
         /// <returns></returns>
         private IWebElement WaitforElement(By by, int timeToReadyElement = 0)
         {
+            if (timeToReadyElement == 0)
+                timeToReadyElement = MaxTimeToFindElement;
             IWebElement element = null;
             try
             {
@@ -244,7 +260,8 @@ namespace AutomationFramework
         /// <returns></returns>
         private bool IsPageReady(IWebDriver driver)
         {
-            return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
+            return ExecuteJavaScriptCode("return document.readyState").Equals("complete");
+           // return ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete");
         }
         /// <summary>
         /// 

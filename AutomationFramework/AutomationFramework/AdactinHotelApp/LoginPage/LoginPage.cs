@@ -9,10 +9,32 @@ namespace AutomationFramework
     {
         public void Login(string url, string username, string password)
         {
-            driver.Url = url;
-            driver.FindElement(usernameTxt).SendKeys(username);
-            driver.FindElement(passwordTxt).SendKeys(password);
-            driver.FindElement(loginBtn).Click();
+            OpenUrl(url);
+            Write(usernameTxt, username);
+            Write(passwordTxt, password);
+            Click(loginBtn);
         }
+
     }
+
+    public partial class AdactinHotelApp
+    {
+        public static LoginPage LoginPage
+        {
+            get
+            {
+                if(loginPage == null)
+                {
+                    loginPage = new LoginPage();
+                }
+                return loginPage;
+            }
+            set
+            {
+                loginPage = value;
+            }
+        }
+        private static LoginPage loginPage;
+    }
+
 }
