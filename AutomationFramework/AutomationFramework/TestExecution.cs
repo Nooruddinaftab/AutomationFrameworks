@@ -50,14 +50,13 @@ namespace AutomationFramework
 
         public const string DataSourceXML = "Microsoft.VisualStudio.TestTools.DataSource.XML";
         public const string DataSourceCSV = "Microsoft.VisualStudio.TestTools.DataSource.CSV";
-        public const string AppUrl = "http://adactinhotelapp.com/";
 
 
         [TestMethod]
         [TestCategory("Login")]
         public void Login()
         {
-            AdactinHotelWebApp.LoginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
         }
 
         /*
@@ -70,7 +69,7 @@ namespace AutomationFramework
             SelectPage selectPage = new SelectPage();
             BookHotelPage bookHotelPage = new BookHotelPage();
 
-            loginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
+            loginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
             searchPage.SearchHotel();
             selectPage.SelectHotel();
             bookHotelPage.BookHotel();
@@ -83,7 +82,7 @@ namespace AutomationFramework
         [TestCategory("E2E")]
         public void TestCase_E2E_02()
         {
-            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
+            AdactinHotelApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
             AdactinHotelApp.SearchPage.SearchHotel();
             AdactinHotelApp.SelectPage.SelectHotel();
             AdactinHotelApp.BookHotelPage.BookHotel();
@@ -95,7 +94,7 @@ namespace AutomationFramework
         [TestCategory(MyDemoAppTestCategory.Login)]
         public void TestCase_E2E_03()
         {
-            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
+            AdactinHotelApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
             AdactinHotelApp.SearchPage.SearchHotel();
             AdactinHotelApp.SelectPage.SelectHotel();
             AdactinHotelApp.BookHotelPage.BookHotel();

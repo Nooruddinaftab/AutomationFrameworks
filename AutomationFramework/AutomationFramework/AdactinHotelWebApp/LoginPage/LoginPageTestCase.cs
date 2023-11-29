@@ -50,7 +50,7 @@ namespace AutomationFramework
         [TestCategory("Test Within LoginPageTestCase Class-Open site")]
         public void OpenSite()
         {
-            OpenUrl("http://adactinhotelapp.com/");
+            OpenUrl(Url);
             Write(usernameTxt, "Noor");
         }
 
@@ -58,8 +58,8 @@ namespace AutomationFramework
         [TestCategory("Test Within LoginPageTestCase Class-Login Negative")]
         public void Login()
         {
-            OpenUrl("http://adactinhotelapp.com/");
-            Write(usernameTxt, "Noor");
+            OpenUrl(Url);
+            Write(usernameTxt, "NoorTester");
             Write(passwordTxt, "Noor");
             Click(loginBtn);
 

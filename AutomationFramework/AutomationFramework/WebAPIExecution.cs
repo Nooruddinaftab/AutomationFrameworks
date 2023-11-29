@@ -46,7 +46,6 @@ namespace AutomationFramework
 
         public const string DataSourceXML = "Microsoft.VisualStudio.TestTools.DataSource.XML";
         public const string DataSourceCSV = "Microsoft.VisualStudio.TestTools.DataSource.CSV";
-        public const string AppUrl = "http://adactinhotelapp.com/";
 
 
         [TestMethod(), TestCategory("WebAPI")]

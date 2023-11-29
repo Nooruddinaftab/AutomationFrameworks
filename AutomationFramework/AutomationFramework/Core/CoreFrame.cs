@@ -19,6 +19,8 @@ namespace AutomationFramework
         public static int MaxTimeToFindElement = Convert.ToInt32(ConfigurationManager.AppSettings["MaxTimeToFindElement"]);
         public static string ExecutionBrowser = ConfigurationManager.AppSettings["ExecutionBrowser"].ToString();
         public static bool HeadlessExecution = Convert.ToBoolean(ConfigurationManager.AppSettings["HeadlessExecution"]);
+        public static string Url = ConfigurationManager.AppSettings["Url"].ToString();
+
         #endregion
 
         #region Javascript Core
