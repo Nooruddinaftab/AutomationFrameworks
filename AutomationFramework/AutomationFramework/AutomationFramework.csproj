@@ -121,9 +121,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdactinHotelApp\LoginPage\LoginPageTestCase.cs" />
-    <Compile Include="AdactinHotelApp\LoginPage\LoginPageLocator.cs" />
-    <Compile Include="AdactinHotelApp\LoginPage\LoginPage.cs" />
+    <Compile Include="AdactinHotelWebApp\LoginPage\LoginPageTestCase.cs" />
+    <Compile Include="AdactinHotelWebApp\LoginPage\LoginPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\LoginPage\LoginPage.cs" />
     <Compile Include="Core\WebAPI.cs" />
     <Compile Include="Core\Initialization.cs" />
     <Compile Include="Core\Keywords.cs" />

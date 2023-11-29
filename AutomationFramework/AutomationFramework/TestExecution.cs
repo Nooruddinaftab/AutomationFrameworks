@@ -57,7 +57,7 @@ namespace AutomationFramework
         [TestCategory("Login")]
         public void Login()
         {
-            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "AmirTester", "AmirTester");
+            AdactinHotelWebApp.LoginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
         }
 
         /*
@@ -70,7 +70,7 @@ namespace AutomationFramework
             SelectPage selectPage = new SelectPage();
             BookHotelPage bookHotelPage = new BookHotelPage();
 
-            loginPage.Login("http://adactinhotelapp.com/", "AmirTester", "AmirTester");
+            loginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
             searchPage.SearchHotel();
             selectPage.SelectHotel();
             bookHotelPage.BookHotel();
@@ -83,7 +83,7 @@ namespace AutomationFramework
         [TestCategory("E2E")]
         public void TestCase_E2E_02()
         {
-            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "AmirTester", "AmirTester");
+            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
             AdactinHotelApp.SearchPage.SearchHotel();
             AdactinHotelApp.SelectPage.SelectHotel();
             AdactinHotelApp.BookHotelPage.BookHotel();
@@ -95,7 +95,7 @@ namespace AutomationFramework
         [TestCategory(MyDemoAppTestCategory.Login)]
         public void TestCase_E2E_03()
         {
-            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "AmirTester", "AmirTester");
+            AdactinHotelApp.LoginPage.Login("http://adactinhotelapp.com/", "NoorTester", "NoorTester");
             AdactinHotelApp.SearchPage.SearchHotel();
             AdactinHotelApp.SelectPage.SelectHotel();
             AdactinHotelApp.BookHotelPage.BookHotel();
@@ -105,7 +105,7 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("Login"), TestCategory("BAT"), TestCategory("P1")]
-        [Owner("Amir"), WorkItem(3345)]
+        [Owner("Noor"), WorkItem(3345)]
         [DataSource(DataSourceXML, "Data.xml", "Login", DataAccessMethod.Sequential)]
         public void ValidateLoginWithValidUserValidPass_XML()
         {
@@ -134,7 +134,7 @@ namespace AutomationFramework
         {
             SqlConnection sqlconnection = Initialization.MSSQLConnect();
 
-            SqlCommand command = new SqlCommand("Select id from student where name = 'Amir'", sqlconnection);
+            SqlCommand command = new SqlCommand("Select id from student where name = 'Noor'", sqlconnection);
 
             // int result = command.ExecuteNonQuery();
             using (SqlDataReader reader = command.ExecuteReader())

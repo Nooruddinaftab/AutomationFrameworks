@@ -17,7 +17,7 @@ namespace AutomationFramework
 
     }
 
-    public partial class AdactinHotelApp
+    public partial class AdactinHotelWebApp
     {
         public static LoginPage LoginPage
         {

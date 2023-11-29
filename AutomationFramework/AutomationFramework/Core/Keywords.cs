@@ -109,7 +109,7 @@ namespace AutomationFramework
     }
     public class MyDemoAppTester
     {
-        public const string AmirImam = "Amir Imam";
+        public const string NoorImam = "Noor Imam";
         public const string WajeehaSiddiqui = "Wajeeha Siddiqui";
 
     }

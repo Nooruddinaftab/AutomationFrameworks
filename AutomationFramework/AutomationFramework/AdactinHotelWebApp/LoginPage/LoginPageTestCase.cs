@@ -51,16 +51,16 @@ namespace AutomationFramework
         public void OpenSite()
         {
             OpenUrl("http://adactinhotelapp.com/");
-            Write(usernameTxt, "Amir");
+            Write(usernameTxt, "Noor");
         }
 
         [TestMethod]
-        [TestCategory("Test Within LoginPageTestCase Class-Login")]
+        [TestCategory("Test Within LoginPageTestCase Class-Login Negative")]
         public void Login()
         {
             OpenUrl("http://adactinhotelapp.com/");
-            Write(usernameTxt, "Amir");
-            Write(passwordTxt, "Amir");
+            Write(usernameTxt, "Noor");
+            Write(passwordTxt, "Noor");
             Click(loginBtn);
 
         }
