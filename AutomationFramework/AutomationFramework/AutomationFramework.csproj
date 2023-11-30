@@ -121,6 +121,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdactinHotelWebApp\ChangePasswordPage\ChangePasswordPage.cs" />
+    <Compile Include="AdactinHotelWebApp\ChangePasswordPage\ChangePasswordPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\ChangePasswordPage\ChangePasswordPageTestCase.cs" />
+    <Compile Include="AdactinHotelWebApp\ForgotPasswordPassword\ForgotPasswordPage.cs" />
+    <Compile Include="AdactinHotelWebApp\ForgotPasswordPassword\ForgotPasswordPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\ForgotPasswordPassword\ForgotPasswordPageTestCase.cs" />
+    <Compile Include="AdactinHotelWebApp\BookedItineraryPage\BookedItineraryPage.cs" />
+    <Compile Include="AdactinHotelWebApp\BookedItineraryPage\BookedItineraryPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\BookedItineraryPage\BookedItineraryPageTestCase.cs" />
+    <Compile Include="AdactinHotelWebApp\BookHotelPage\BookHotelPage.cs" />
+    <Compile Include="AdactinHotelWebApp\BookHotelPage\BookHotelPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\BookHotelPage\BookHotelPageTestCase.cs" />
+    <Compile Include="AdactinHotelWebApp\SelectHotelPage\SelectHotelPage.cs" />
+    <Compile Include="AdactinHotelWebApp\SelectHotelPage\SelectHotelPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\SelectHotelPage\SelectHotelPageTestCase.cs" />
+    <Compile Include="AdactinHotelWebApp\SearchHotelPage\SearchHotelPage.cs" />
+    <Compile Include="AdactinHotelWebApp\SearchHotelPage\SearchHotelPageLocator.cs" />
+    <Compile Include="AdactinHotelWebApp\SearchHotelPage\SearchHotelPageTestCase.cs" />
     <Compile Include="AdactinHotelWebApp\LoginPage\LoginPageTestCase.cs" />
     <Compile Include="AdactinHotelWebApp\LoginPage\LoginPageLocator.cs" />
     <Compile Include="AdactinHotelWebApp\LoginPage\LoginPage.cs" />

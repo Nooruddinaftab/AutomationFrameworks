@@ -53,8 +53,8 @@ namespace AutomationFramework
 
 
         [TestMethod]
-        [TestCategory("Login")]
-        public void Login()
+        [TestCategory("LoginAndVerify")]
+        public void LoginAndVerify()
         {
             AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
             string message = Initialization.driver.FindElement(By.ClassName("welcome_menu")).Text;

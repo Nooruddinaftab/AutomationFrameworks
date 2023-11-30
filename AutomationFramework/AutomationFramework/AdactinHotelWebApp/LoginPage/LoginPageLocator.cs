@@ -5,15 +5,13 @@ using System;
 
 namespace AutomationFramework
 {
-    public partial class LoginPage : CoreFrame
+    public partial class LoginPage 
     {
-        By usernameTxt = By.Id("username");
-        By passwordTxt = By.Id("password");
-        By loginBtn = By.Id("login");
+        public By usernameTxt = By.Id("username");
+        public By passwordTxt = By.Id("password");
+        public By loginBtn = By.Id("login");
 
-        By forgotpasswordLink = By.XPath("//*[@id=\"login_form\"]/table/tbody/tr[4]/td[2]/div/a");
-        By emailaddrecoveryTxt = By.Id("emailadd_recovery");
-        By emailpswBtn = By.Id("Submit");
-        By invaliduserpswresetLink = By.XPath("//*[@id=\"login_form\"]/table/tbody/tr[5]/td[2]/div/b/a");
+        public By forgotpasswordLink = By.XPath("//*[@id=\"login_form\"]/table/tbody/tr[4]/td[2]/div/a");
+        public By invaliduserpswresetLink = By.XPath("//*[@id=\"login_form\"]/table/tbody/tr[5]/td[2]/div/b/a");
     }
 }

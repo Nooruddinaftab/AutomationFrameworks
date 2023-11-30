@@ -14,7 +14,16 @@ namespace AutomationFramework
             Write(passwordTxt, password);
             Click(loginBtn);
         }
-
+        public void LoginAfterResetPassword(string url, string username, string password)
+        {
+            OpenUrl(url);
+            Write(usernameTxt, username);
+            Write(passwordTxt, password);
+            Click(loginBtn);
+            string message = GetElementText(invaliduserpswresetLink);
+            Assert.AreEqual("Click here", message);
+            //Assert.AreEqual("dasdasd here", message); call this to fail
+        }
     }
 
     public partial class AdactinHotelWebApp
