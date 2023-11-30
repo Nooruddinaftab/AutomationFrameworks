@@ -7,7 +7,7 @@ namespace AutomationFramework
 {
     public partial class ForgotPasswordPage
     {
-        By emailaddrecoveryTxt = By.Id("emailadd_recovery");
-        By emailpswBtn = By.Id("Submit");
+        public By emailaddrecoveryTxt = By.Id("emailadd_recovery");
+        public By emailpswBtn = By.Id("Submit");
     }
 }

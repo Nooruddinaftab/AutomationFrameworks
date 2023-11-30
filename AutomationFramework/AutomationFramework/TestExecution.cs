@@ -54,11 +54,39 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("LoginAndVerify")]
+        [DataSource(DataSourceXML, "Data.xml", "LoginAndVerify", DataAccessMethod.Sequential)]
         public void LoginAndVerify()
         {
-            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
-            string message = Initialization.driver.FindElement(By.ClassName("welcome_menu")).Text;
-            Assert.AreEqual("Welcome to Adactin Group of Hotels", message);
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+            string msg = TestContext.DataRow["message"].ToString();
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, user, pass);
+            string messageLabelTxt = Initialization.driver.FindElement(AdactinHotelWebApp.SearchHotelPage.welcomeMessageLabel).Text;
+            Assert.AreEqual(msg, messageLabelTxt);
+        }
+
+        [TestMethod]
+        [TestCategory("Search Hotels")]
+        [DataSource(DataSourceXML, "Data.xml", "SearchHotel", DataAccessMethod.Sequential)]
+        public void SearchHotel()
+        {
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+            string msg = TestContext.DataRow["message"].ToString();
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, user, pass);
+            string messageLabelTxt = Initialization.driver.FindElement(AdactinHotelWebApp.SearchHotelPage.welcomeMessageLabel).Text;
+            Assert.AreEqual(msg, messageLabelTxt);
+
+            string Location = TestContext.DataRow["Location"].ToString();
+            string Hotels = TestContext.DataRow["Hotels"].ToString();
+            string RoomType = TestContext.DataRow["RoomType"].ToString();
+            string NoOfRooms = TestContext.DataRow["NoOfRooms"].ToString();
+            string CheckinDate = TestContext.DataRow["CheckinDate"].ToString();
+            string CheckoutDate = TestContext.DataRow["CheckoutDate"].ToString();
+            string AdultsPerRoom = TestContext.DataRow["AdultsPerRoom"].ToString();
+            string ChildrenPerRoom = TestContext.DataRow["ChildrenPerRoom"].ToString();
+
+            AdactinHotelWebApp.SearchHotelPage.Search(Location, Hotels, RoomType, NoOfRooms, CheckinDate, CheckoutDate, AdultsPerRoom, ChildrenPerRoom);
         }
 
         /*

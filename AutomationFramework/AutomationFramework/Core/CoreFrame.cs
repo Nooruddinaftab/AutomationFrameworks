@@ -20,6 +20,7 @@ namespace AutomationFramework
         public static string ExecutionBrowser = ConfigurationManager.AppSettings["ExecutionBrowser"].ToString();
         public static bool HeadlessExecution = Convert.ToBoolean(ConfigurationManager.AppSettings["HeadlessExecution"]);
         public static string Url = ConfigurationManager.AppSettings["Url"].ToString();
+        public const string DataSourceXML = "Microsoft.VisualStudio.TestTools.DataSource.XML";
 
         #endregion
 
@@ -84,7 +85,15 @@ namespace AutomationFramework
             try // Locate Element
             {
                 var element = WaitforElement(by, timeToReadyElement);
-                element.SendKeys(setValue);
+                try
+                {
+                    element.Clear();
+                    element.SendKeys(setValue);
+                }
+                catch
+                {
+                    element.SendKeys(setValue);
+                }
             }
             catch (Exception ex)
             {

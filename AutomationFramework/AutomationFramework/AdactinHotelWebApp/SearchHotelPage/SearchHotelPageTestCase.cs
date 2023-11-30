@@ -47,10 +47,10 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("Search Hotels")]
-        public void SearchHotel()
+        [DataSource(DataSourceXML, "Data.xml", "SearchHotel", DataAccessMethod.Sequential)]
+        public void SearchHotelTT()
         {
 
         }
-
     }
 }

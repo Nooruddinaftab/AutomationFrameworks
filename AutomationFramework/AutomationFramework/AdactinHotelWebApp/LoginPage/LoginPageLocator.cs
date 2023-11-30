@@ -13,5 +13,6 @@ namespace AutomationFramework
 
         public By forgotpasswordLink = By.XPath("//*[@id=\"login_form\"]/table/tbody/tr[4]/td[2]/div/a");
         public By invaliduserpswresetLink = By.XPath("//*[@id=\"login_form\"]/table/tbody/tr[5]/td[2]/div/b/a");
+        public By auth_Label = By.Id("auth_error");
     }
 }

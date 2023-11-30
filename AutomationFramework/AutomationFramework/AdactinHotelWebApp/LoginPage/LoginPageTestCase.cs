@@ -47,42 +47,47 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("Login with Valid Creds")]
+        [DataSource(DataSourceXML, "Data.xml", "LoginCorrect", DataAccessMethod.Sequential)]
         public void LoginCorrect()
         {
-            Login(LoginPage.Url, "NoorTester", "NoorTester");
-            string message = Initialization.driver.FindElement(By.ClassName("welcome_menu")).Text;
-            Assert.AreEqual("Welcome to Adactin Group of Hotels", message);
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+            string msg = TestContext.DataRow["message"].ToString();
+            Login(LoginPage.Url, user, pass);
+            string messageLabelTxt = Initialization.driver.FindElement(AdactinHotelWebApp.SearchHotelPage.welcomeMessageLabel).Text;
+            Assert.AreEqual(msg, messageLabelTxt);
         }
 
         [TestMethod]
-        [TestCategory("Test Within LoginPageTestCase Class-Open site")]
-        public void OpenSite()
-        {
-            OpenUrl(Url);
-            Write(usernameTxt, "Noor");
-        }
-
-        [TestMethod]
-        [TestCategory("Test Within LoginPageTestCase Class-Login Negative")]
+        [TestCategory("Login with InValid Creds")]
+        [DataSource(DataSourceXML, "Data.xml", "LoginWrong", DataAccessMethod.Sequential)]
         public void LoginWrong()
         {
-            Login(LoginPage.Url, "NoorTester", "Noor");
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+
+            Login(LoginPage.Url, user, pass);
             string message = GetElementText(invaliduserpswresetLink);
             Assert.AreEqual("Click here", message);
 
         }
         [TestMethod]
         [TestCategory("Reset Password")]
+        [DataSource(DataSourceXML, "Data.xml", "ResetPassword", DataAccessMethod.Sequential)]
         public void ResetPassword()
         {
+            string emailId = TestContext.DataRow["emailid"].ToString();
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+
             OpenUrl(Url);
             // click on forgot password link
             Click(forgotpasswordLink);
 
-            AdactinHotelWebApp.ForgotPasswordPage.ResetPassword("noori_dar@yahoo.com");
+            AdactinHotelWebApp.ForgotPasswordPage.ResetPassword(emailId);
 
             // validate with login correct credentials
-            LoginAfterResetPassword(LoginPage.Url, "NoorTester", "NoorTester");
+            LoginAfterResetPassword(LoginPage.Url, user, pass);
 
         }
 

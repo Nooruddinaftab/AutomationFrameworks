@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Automation>
 	<Execution>			
-		<Login>
-			<url>http://adactinhotelapp.com/</url> 
-			<username>AmirTester</username>
-			<password>AmirTester</password>
+		<LoginCorrect>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
 			<message>Welcome to Adactin Group of Hotels</message>
 			<locator>welcome_menu</locator>				
-		</Login>		
-		<LoginWithValidUserInvalidPass>
-			<url>http://adactinhotelapp.com/</url> 
-			<username>Wajeeha</username>
+		</LoginCorrect>		
+		<LoginWrong>
+			<username>NoorTester</username>
 			<password>Test123</password>
 			<message>Invalid Login details or Your Password might have expired. Click here to reset your password</message>
 			<locator>auth_error</locator>				
-		</LoginWithValidUserInvalidPass>	
+		</LoginWrong>
+		<LoginAndVerify>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>				
+		</LoginAndVerify>
+		<ResetPassword>
+			<emailid>NoorTester</emailid>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>				
+		</ResetPassword>
+		<SearchHotel>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>
+			<Location>Sydney</Location>
+			<Hotels>Hotel Hervey</Hotels>
+			<RoomType>Standard</RoomType>
+			<NoOfRooms>2 - Two</NoOfRooms>
+			<CheckinDate>08/07/2021</CheckinDate>
+			<CheckoutDate>09/07/2021</CheckoutDate>
+			<AdultsPerRoom>2 - Two</AdultsPerRoom>
+			<ChildrenPerRoom>2 - Two</ChildrenPerRoom>
+		</SearchHotel>		
 		<WebAPI>
 		<BaseURL>http://api.weatherapi.com/</BaseURL>
 		<region>region</region>
