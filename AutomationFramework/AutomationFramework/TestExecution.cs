@@ -57,6 +57,8 @@ namespace AutomationFramework
         public void Login()
         {
             AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
+            string message = Initialization.driver.FindElement(By.ClassName("welcome_menu")).Text;
+            Assert.AreEqual("Welcome to Adactin Group of Hotels", message);
         }
 
         /*

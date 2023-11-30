@@ -45,6 +45,15 @@ namespace AutomationFramework
 
         #endregion
 
+        [TestMethod]
+        [TestCategory("Login with Valid Creds")]
+        public void LoginCorrect()
+        {
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
+            string message = Initialization.driver.FindElement(By.ClassName("welcome_menu")).Text;
+            Assert.AreEqual("Welcome to Adactin Group of Hotels", message);
+
+        }
 
         [TestMethod]
         [TestCategory("Test Within LoginPageTestCase Class-Open site")]
@@ -56,13 +65,31 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("Test Within LoginPageTestCase Class-Login Negative")]
-        public void Login()
+        public void LoginWrong()
+        {
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "Noor");
+            string message = GetElementText(invaliduserpswresetLink);
+            Assert.AreEqual("Click here", message);
+
+        }
+        [TestMethod]
+        [TestCategory("Reset Password")]
+        public void ResetPassword()
         {
             OpenUrl(Url);
-            Write(usernameTxt, "NoorTester");
-            Write(passwordTxt, "Noor");
-            Click(loginBtn);
+            // click on forgot password link
+            Click(forgotpasswordLink);
 
+            // enter email
+            Write(emailaddrecoveryTxt,"noori_dar@yahoo.com");
+            // press reset btn
+            Click(emailpswBtn);
+
+            // validate with login correct credentials
+            //AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, "NoorTester", "NoorTester");
+            string message = GetElementText(invaliduserpswresetLink);
+            Assert.AreEqual("Click here", message);
         }
     }
 }
