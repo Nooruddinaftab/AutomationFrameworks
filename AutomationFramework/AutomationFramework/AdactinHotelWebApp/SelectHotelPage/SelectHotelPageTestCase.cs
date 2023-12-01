@@ -47,9 +47,9 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("Select Hotel")]
-        public void SelectHotel()
+        public void SelectHotelCase(int resultIndex)
         {
-
+            SelectHotel(resultIndex);
         }
 
     }

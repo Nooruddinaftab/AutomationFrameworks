@@ -88,7 +88,70 @@ namespace AutomationFramework
 
             AdactinHotelWebApp.SearchHotelPage.Search(Location, Hotels, RoomType, NoOfRooms, CheckinDate, CheckoutDate, AdultsPerRoom, ChildrenPerRoom);
         }
+        [TestMethod]
+        [TestCategory("Select Hotel")]
+        [DataSource(DataSourceXML, "Data.xml", "SelectHotel", DataAccessMethod.Sequential)]
+        public void SelectHotel()
+        {
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+            string msg = TestContext.DataRow["message"].ToString();
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, user, pass);
+            string messageLabelTxt = Initialization.driver.FindElement(AdactinHotelWebApp.SearchHotelPage.welcomeMessageLabel).Text;
+            Assert.AreEqual(msg, messageLabelTxt);
 
+            string Location = TestContext.DataRow["Location"].ToString();
+            string Hotels = TestContext.DataRow["Hotels"].ToString();
+            string RoomType = TestContext.DataRow["RoomType"].ToString();
+            string NoOfRooms = TestContext.DataRow["NoOfRooms"].ToString();
+            string CheckinDate = TestContext.DataRow["CheckinDate"].ToString();
+            string CheckoutDate = TestContext.DataRow["CheckoutDate"].ToString();
+            string AdultsPerRoom = TestContext.DataRow["AdultsPerRoom"].ToString();
+            string ChildrenPerRoom = TestContext.DataRow["ChildrenPerRoom"].ToString();
+
+            AdactinHotelWebApp.SearchHotelPage.Search(Location, Hotels, RoomType, NoOfRooms, CheckinDate, CheckoutDate, AdultsPerRoom, ChildrenPerRoom);
+
+            int ResultIndex = Convert.ToInt32(TestContext.DataRow["ResultIndex"].ToString());
+            AdactinHotelWebApp.SelectHotelPage.SelectHotel(ResultIndex);
+        }
+        [TestMethod]
+        [TestCategory("Book Hotel")]
+        [DataSource(DataSourceXML, "Data.xml", "BookHotel", DataAccessMethod.Sequential)]
+        public void BookHotel()
+        {
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+            string msg = TestContext.DataRow["message"].ToString();
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, user, pass);
+            string messageLabelTxt = Initialization.driver.FindElement(AdactinHotelWebApp.SearchHotelPage.welcomeMessageLabel).Text;
+            Assert.AreEqual(msg, messageLabelTxt);
+
+            string Location = TestContext.DataRow["Location"].ToString();
+            string Hotels = TestContext.DataRow["Hotels"].ToString();
+            string RoomType = TestContext.DataRow["RoomType"].ToString();
+            string NoOfRooms = TestContext.DataRow["NoOfRooms"].ToString();
+            string CheckinDate = TestContext.DataRow["CheckinDate"].ToString();
+            string CheckoutDate = TestContext.DataRow["CheckoutDate"].ToString();
+            string AdultsPerRoom = TestContext.DataRow["AdultsPerRoom"].ToString();
+            string ChildrenPerRoom = TestContext.DataRow["ChildrenPerRoom"].ToString();
+
+            AdactinHotelWebApp.SearchHotelPage.Search(Location, Hotels, RoomType, NoOfRooms, CheckinDate, CheckoutDate, AdultsPerRoom, ChildrenPerRoom);
+
+            int ResultIndex = Convert.ToInt32(TestContext.DataRow["ResultIndex"].ToString());
+            AdactinHotelWebApp.SelectHotelPage.SelectHotel(ResultIndex);
+
+            string fname = TestContext.DataRow["fname"].ToString();
+            string lname = TestContext.DataRow["lname"].ToString();
+            string address = TestContext.DataRow["address"].ToString();
+            string cCNo = TestContext.DataRow["cCNo"].ToString();
+            string cCType = TestContext.DataRow["cCType"].ToString();
+            string expiryDate = TestContext.DataRow["expiryDate"].ToString();
+            string expiryYear = TestContext.DataRow["expiryYear"].ToString();
+            string cVVNo = TestContext.DataRow["cVVNo"].ToString();
+            AdactinHotelWebApp.BookHotelPage.BookHotel(fname, lname, address, cCNo, cCType, expiryDate, expiryYear, cVVNo);
+            Thread.Sleep(10000);
+            Console.WriteLine("Order Number: " + AdactinHotelWebApp.BookHotelPage.GetOrderNo());
+        }
         /*
         [TestMethod]
         [TestCategory("E2E")]

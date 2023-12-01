@@ -47,7 +47,7 @@ namespace AutomationFramework
 
         [TestMethod]
         [TestCategory("Book Hotel")]
-        public void BookHotel()
+        public void BookHotelTC()
         {
 
         }

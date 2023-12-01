@@ -39,7 +39,45 @@
 			<CheckoutDate>09/07/2021</CheckoutDate>
 			<AdultsPerRoom>2 - Two</AdultsPerRoom>
 			<ChildrenPerRoom>2 - Two</ChildrenPerRoom>
-		</SearchHotel>		
+		</SearchHotel>
+		<SelectHotel>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>
+			<Location>Sydney</Location>
+			<Hotels>Hotel Hervey</Hotels>
+			<RoomType>Standard</RoomType>
+			<NoOfRooms>2 - Two</NoOfRooms>
+			<CheckinDate>08/07/2021</CheckinDate>
+			<CheckoutDate>09/07/2021</CheckoutDate>
+			<AdultsPerRoom>2 - Two</AdultsPerRoom>
+			<ChildrenPerRoom>2 - Two</ChildrenPerRoom>
+			<ResultIndex>0</ResultIndex>
+		</SelectHotel>
+		<BookHotel>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>
+			<Location>Sydney</Location>
+			<Hotels>Hotel Hervey</Hotels>
+			<RoomType>Standard</RoomType>
+			<NoOfRooms>2 - Two</NoOfRooms>
+			<CheckinDate>08/07/2021</CheckinDate>
+			<CheckoutDate>09/07/2021</CheckoutDate>
+			<AdultsPerRoom>2 - Two</AdultsPerRoom>
+			<ChildrenPerRoom>2 - Two</ChildrenPerRoom>
+			<ResultIndex>0</ResultIndex>
+			<fname>noor</fname>
+			<lname>dar</lname>
+			<address>R-67/1, Bufferzone,</address>
+			<cCNo>12345678987654321</cCNo>
+			<cCType>VISA</cCType>
+			<expiryDate>november</expiryDate>
+			<expiryYear>2027</expiryYear>
+			<cVVNo>1233</cVVNo>
+		</BookHotel>	
 		<WebAPI>
 		<BaseURL>http://api.weatherapi.com/</BaseURL>
 		<region>region</region>

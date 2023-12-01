@@ -7,6 +7,10 @@ namespace AutomationFramework
 {
     public partial class SelectHotelPage
     {
+        public By []selectRadioBtnArray;
+        public By continueBtn = By.Id("continue");
+        public By cancelBtn = By.Id("cancel");
+
 
     }
 }
