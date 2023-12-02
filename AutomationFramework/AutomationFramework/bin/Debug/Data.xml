@@ -77,7 +77,13 @@
 			<expiryDate>november</expiryDate>
 			<expiryYear>2027</expiryYear>
 			<cVVNo>1233</cVVNo>
-		</BookHotel>	
+		</BookHotel>
+		<CancelAllBookings>
+			<username>NoorTester</username>
+			<password>NoorTester</password>
+			<message>Welcome to Adactin Group of Hotels</message>
+			<locator>welcome_menu</locator>
+		</CancelAllBookings>	
 		<WebAPI>
 		<BaseURL>http://api.weatherapi.com/</BaseURL>
 		<region>region</region>

@@ -53,3 +53,4 @@ F:\AutomationFrameworks\AutomationFramework\AutomationFramework\obj\Debug\Automa
 F:\AutomationFrameworks\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.dll
 F:\AutomationFrameworks\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.pdb
 F:\AutomationFrameworks\AutomationFramework\AutomationFramework\obj\Debug\AutomationFramework.csproj.AssemblyReference.cache
+F:\AutomationFrameworks\AutomationFramework\AutomationFramework\bin\Debug\SeleniumExtras.WaitHelpers.dll

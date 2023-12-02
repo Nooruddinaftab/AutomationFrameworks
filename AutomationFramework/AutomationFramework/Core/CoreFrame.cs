@@ -9,6 +9,8 @@ using System.Configuration;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using SeleniumExtras.WaitHelpers;
+
 
 namespace AutomationFramework
 {
@@ -25,6 +27,8 @@ namespace AutomationFramework
         #endregion
 
         #region Javascript Core
+
+
         public void Write(string locator, string setValue, int timeToReadyElement = 0)
         {
             if ( timeToReadyElement == 0)
@@ -75,6 +79,23 @@ namespace AutomationFramework
         #endregion
 
         #region Core Methods
+        public void AlertAccept(int timeToReadyElement = 0)
+        {
+            Thread.Sleep(5000);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+
+            IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
+            alert.Accept();
+        }
+
+        public void AlertDismiss(int timeToReadyElement = 0)
+        {
+            Thread.Sleep(5000);
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+
+            IAlert alert = wait.Until(ExpectedConditions.AlertIsPresent());
+            alert.Dismiss();
+        }
         public void Write(By by, string setValue, int timeToReadyElement = 0)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(MaxTimeToFindElement));
@@ -100,6 +121,7 @@ namespace AutomationFramework
 
             }
         }
+
         public void Click(By by, int timeToReadyElement = 0)
         {
             if (timeToReadyElement == 0)

@@ -16,7 +16,12 @@ namespace AutomationFramework
 
         public void CancelBooking()
         {
+            Click(cancelBtn);
+        }
 
+        internal void SelectAllBookings()
+        {
+            Click(selectAllBookedCheckbox);
         }
     }
 

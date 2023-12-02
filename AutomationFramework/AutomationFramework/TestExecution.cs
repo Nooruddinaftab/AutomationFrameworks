@@ -51,6 +51,24 @@ namespace AutomationFramework
         public const string DataSourceXML = "Microsoft.VisualStudio.TestTools.DataSource.XML";
         public const string DataSourceCSV = "Microsoft.VisualStudio.TestTools.DataSource.CSV";
 
+        [TestMethod]
+        [TestCategory("CancelAllBookings")]
+        [DataSource(DataSourceXML, "Data.xml", "CancelAllBookings", DataAccessMethod.Sequential)]
+        public void CancelAllBookings()
+        {
+            string user = TestContext.DataRow["username"].ToString();
+            string pass = TestContext.DataRow["password"].ToString();
+            string msg = TestContext.DataRow["message"].ToString();
+            AdactinHotelWebApp.LoginPage.Login(LoginPage.Url, user, pass);
+            string messageLabelTxt = Initialization.driver.FindElement(AdactinHotelWebApp.SearchHotelPage.welcomeMessageLabel).Text;
+            Assert.AreEqual(msg, messageLabelTxt);
+
+            AdactinHotelWebApp.BookedItineraryPage.Click(AdactinHotelWebApp.BookedItineraryPage.bookedItineraryTab);
+            AdactinHotelWebApp.BookedItineraryPage.SelectAllBookings();
+            AdactinHotelWebApp.BookedItineraryPage.CancelBooking();
+            AdactinHotelWebApp.BookedItineraryPage.AlertAccept();
+        }
+
 
         [TestMethod]
         [TestCategory("LoginAndVerify")]
