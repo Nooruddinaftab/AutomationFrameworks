@@ -1,7 +1,7 @@
 @ECHO OFF
 ECHO  Automation Framework Executed Started.
 
-set testcategory=Test Within LoginPageTestCase Class-Login
+set testcategory=Book Hotel
 set dllpath=F:\AutomationFrameworks\AutomationFramework\AutomationFramework\bin\Debug\AutomationFramework.dll
 set trxerpath=F:\AutomationFrameworks\AutomationFramework\AutomationFramework\bin\Debug\
 set testsummaryreportPath=F:\AutomationFrameworks\AutomationFramework\AutomationFramework\TestSummaryReport\
@@ -18,6 +18,6 @@ md %filename%
 VSTest.Console.exe  %dllpath% /TestCaseFilter:"TestCategory=%testcategory%" /Logger:"trx;LogFileName=%testsummaryreportPath%\%filename%\%filename%.trx"
 
 cd %trxerpath%
-TrxToHTML.exe %testsummaryreportPath%%filename%\
+@TrxToHTML.exe %testsummaryreportPath%%filename%\
 
 PAUSE

@@ -46,7 +46,7 @@ namespace AutomationFramework
         #endregion
 
         [TestMethod]
-        [TestCategory("Book Hotel")]
+        [TestCategory("Book Hotel TC")]
         public void BookHotelTC()
         {
 
